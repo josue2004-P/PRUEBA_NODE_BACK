@@ -10,7 +10,13 @@ const app = express();
 dbConnection();
 
 // CORS
-app.use(cors())
+app.use(
+    cors({
+      credentials: true,
+      origin: "https://zingy-taffy-92fc10.netlify.app",
+    })
+  );
+  
 
 // Directorio Público
 app.use( express.static('public') );
